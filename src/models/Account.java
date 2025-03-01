@@ -1,9 +1,9 @@
 package src.models;
 
 public class Account {
-    private int agency;
-    private int id;
-    private double balance;
+    protected int agency;
+    protected int id;
+    protected double balance;
 
     public int getAgency() {
         return agency;
