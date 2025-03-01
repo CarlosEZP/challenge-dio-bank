@@ -22,7 +22,17 @@ public abstract class Account {
         return balance;
     }
 
-    public void deposit(){}
-    public void withdraw(){}
-    public void transfer(){}
+    public void deposit(double value){
+        this.balance += value;
+    }
+    public void withdraw(double value){
+        this.balance -= value;
+    }
+    public void transfer(double value, Account account){
+        if(this.balance >= value){
+            this.withdraw(value);
+            account.deposit(value);
+        }else
+            System.out.println("The operation is not possible: There is not enough balance in the account.");
+    }
 }
